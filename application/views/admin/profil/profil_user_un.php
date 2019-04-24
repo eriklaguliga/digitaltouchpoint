@@ -203,31 +203,54 @@ $(document).ready(function(){
             <div class="input-group">
               <span class="input-group-addon">
                 <div style="width:150px;text-align:left">
-                  <i class="fa fa-phone" style="width:20px"></i> Sub Departement
+                  <i class="fa fa-phone" style="width:20px"></i> Bidang
                 </div>
               </span>
-              <input type="text" class="form-control" placeholder="** Sub Departement" name="sub_dep" readonly value="<?php echo $profil['sub_dep'] ?>"/>
+              <input type="text" class="form-control" placeholder="** Sub Departement" name="sub_dep" readonly value="<?php echo $profil['nama_bidang'] ?>"/>
               <span class="glyphicon  form-control-feedback"></span>
             </div>
             <div class="input-group">
               <span class="input-group-addon">
                 <div style="width:150px;text-align:left">
-                  <i class="fa fa-home" style="width:20px"></i>Nama Bidang
+                  <i class="fa fa-home" style="width:20px"></i>Update Bidang
                 </div>
               </span>
-                <select class="form-control" name="nama_bidang">
-                  <?php
-                  foreach ($namabidang as $nb) {
+              <div class="form-group">
+              <select name="bidang" id="bidang" class = "form-control input-lg"> 
+                    <option value=""> Select Bidang</option>
+                    <?php 
+                    foreach ($bidang as $row)
+                    {
+                      echo '<option value="'.$row->id_bidang.'">'.$row->nama_bidang.'</option>';
+
+                    }
                     ?>
-                      <option value="<?php echo $nb['nama_bidang']?>" <?php 
-                        if($nb['nama_bidang']==$namabidang){
-                          echo "selected";
-                        }
-                      ?>><?php echo $nb['nama_bidang']?></option>
-                    <?php
-                  }
-                  ?>
+                    </select>
+            
+              
+                </div>
+                
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <div style="width:150px;text-align:left">
+                  <i class="fa fa-home" style="width:20px"></i> nama sesksi
+                </div>
+              </span>
+              <input type="text" class="form-control" placeholder="** Sub Departement" name="sub_dep" readonly value="<?php echo $profil['nama_seksi'] ?>"/>
+              <span class="glyphicon  form-control-feedback"></span>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">
+                <div style="width:150px;text-align:left">
+                  <i class="fa fa-home" style="width:20px"></i>update seksi
+                </div>
+              </span>
+              <div class="form-group">
+                <select name="seksi" id="seksi" class="form-control input-lg">
+                <option value = "">Pilih bidang terlebih dahulu</option>
                 </select>
+                </div>
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-6">

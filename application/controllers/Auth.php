@@ -71,7 +71,7 @@ class Auth extends CI_Controller {
                             $tbl_login['email'] =$entries[0][$entries[0][1]][0];
                             $tbl_login['level']="1";
                             $tbl_login['job_title'] =$entries[0][$entries[0][23]][0];
-                            $tbl_login['nama_seksi'] =$entries[0][$entries[0][25]][0];
+                            // $tbl_login['nama_seksi'] =$entries[0][$entries[0][25]][0];
                             // $tbl_login['id_seksi'] = $this->Model_permintaan->last_record_seksi();
                             $data1 = $this->db->query("SELECT * FROM tbl_login WHERE username = ".$entries[0][$entries[0][4]][0])->row_array();
                             if ($data1 > 0){

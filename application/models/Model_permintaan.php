@@ -339,11 +339,16 @@
 
       function update_profile_un() {
         $username = $this->session->userdata('username');
+        $nama_bidang = $this->get_nama_bidang_id($this->input->post('bidang'));
+        $nama_seksi = $this->get_nama_seksi_id($this->input->post('seksi'));
            $data = array(
                'nama' => $this->input->post('nama'),
                'email' => $this->input->post('email'),
                'phone_number' => $this->input->post('phone_number'),
-               'nama_bidang' => $this->input->post('nama_bidang')
+               'nama_bidang' => $nama_bidang,
+               'nama_seksi' =>$nama_seksi,
+               'id_bidang' => $this->input->post('bidang'),
+               'id_seksi' => $this->input->post('seksi')
            );
            $this->db->where('username', $username);
            $this->db->update('tbl_login', $data);
